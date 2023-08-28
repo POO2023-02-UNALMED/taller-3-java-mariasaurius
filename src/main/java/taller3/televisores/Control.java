@@ -3,10 +3,8 @@ package taller3.televisores;
 public class Control {
 	private TV tv;
 	
-	// esto solo se usa si estoy en un main tv.turnOn()
 	
 	public void turnOn() {
-		// desde la clase control estoy llamando al metodo de la tv turn on
         this.tv.turnOn();
     }
 
@@ -18,7 +16,7 @@ public class Control {
         this.tv.canalUp();
     }
 
-    public void canalDown(int canal) {
+    public void canalDown() {
         this.tv.canalDown();
     }
 

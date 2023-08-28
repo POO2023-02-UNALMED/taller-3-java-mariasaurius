@@ -7,23 +7,14 @@ public class TV {
 	private boolean estado;
 	private int volumen;
 	private Control control;
-	//Se debe iniciar en 0 para que pueda ir sumando
 	private static int numTV = 0;
 	
 	public TV (Marca marca, boolean estado) {
 		this.marca = marca;
 		this.estado = estado;
-		//Valores que uno escoge como defecto
-		//Esto se tiene que hacer porque solo se pasan 2 parametros
-		//Y como al crear el constructor deja de existir el constructor por defecto
-		//Si no se indica los valores para los demas atributos, saldra error
 		this.canal = 1;
 		this.volumen = 1;
 		this.precio = 500;
-		//Como el constructor pertenece a la clase, puedo acceder al atributo
-		//Sin necesidad de usar el metodo set
-		//No tengo que poner = ++, eso es un error
-		//Sencillamente se pone ++ para indicar que aumenta en 1
 		TV.numTV ++; 
 	
 	}
@@ -52,24 +43,23 @@ public class TV {
 		this.control = control;
 	}
 	
-	public static void setnumTV (int numTV) {
-		//Como es un atributo de clase, se accede de esta forma
+	public static void setNumTV (int numTV) {
 		TV.numTV = numTV;
 	}
 	
-	public Marca getMarca () {
+	public Marca getMarca(){
 		return this.marca;
 	}
 	
-	public int getCanal () {
+	public int getCanal(){
 		return this.canal;
 	}
 	
-	public int getPrecio () {
+	public int getPrecio(){
 		return this.precio;
 	}
 	
-	public int getVolumen () {
+	public int getVolumen(){
 		return this.volumen;
 	}
 	
@@ -77,37 +67,38 @@ public class TV {
 		return this.control;
 	}
 	
-	public static int getnumTV () {
-		//Como es un atributo de clase, se accede de esta forma
+	public static int getNumTV () {
 		return TV.numTV;
 	}
 	
-	//No tengo parametros porque solo le estoy cambiando el valor al atributo
-	//Cuando le voy a cambiar el valor dentro del metodo ahi si le paso un parametro
-	//Sin embargo, como es un boolean no hay necesidad
-	public void turnOn () {
+
+	public void turnOn() {
 		this.estado = true;
 		}
 	
-	public void turnOff () {
+	public void turnOff() {
 		this.estado = false;
 	}
 	
-	
-	public void canalUp () {
-		this.setCanal(canal + 1);
+	public boolean getEstado() {
+		return this.estado;
 	}
 	
-	public void canalDown () {
-		this.setCanal(canal - 1);
+	
+	public void canalUp() {
+		this.setCanal(this.canal + 1);
 	}
 	
-	public void volumenUp () {
-		this.setVolumen(volumen + 1);
+	public void canalDown() {
+		this.setCanal(this.canal - 1);
 	}
 	
-	public void volumenDown () {
-		this.setVolumen(volumen - 1);
+	public void volumenUp() {
+		this.setVolumen(this.volumen + 1);
+	}
+	
+	public void volumenDown() {
+		this.setVolumen(this.volumen - 1);
 	}
 	
 }
