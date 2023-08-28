@@ -7,39 +7,40 @@ public class Control {
 	
 	public void turnOn() {
 		// desde la clase control estoy llamando al metodo de la tv turn on
-        tv.turnOn();
+        this.tv.turnOn();
     }
 
     public void turnOff() {
-        tv.turnOff();
+        this.tv.turnOff();
     }
 
     public void canalUp() {
-        tv.canalUp();
+        this.tv.canalUp();
     }
 
     public void canalDown(int canal) {
-        tv.canalDown();
+        this.tv.canalDown();
     }
 
-    public void volumenUp(int volumen) {
-        tv.volumenUp();
+    public void volumenUp() {
+        this.tv.volumenUp();
     }
 
-    public void volumenDown(int volumen) {
-        tv.volumenDown();
+    public void volumenDown() {
+        this.tv.volumenDown();
     }
 
     public void setCanal(int canal) {
-        tv.setCanal(canal);
+        this.tv.setCanal(canal);
     }
 
     public void setVolumen(int volumen) {
-        tv.setVolumen(volumen);
+        this.tv.setVolumen(volumen);
     }
 	
     public void enlazar (TV tv) {
     	this.tv = tv;
+    	this.tv.setControl(this);
     }
     
     public void setTv (TV tv) {
@@ -47,7 +48,7 @@ public class Control {
     }
     
     public TV getTv () {
-    	return tv;
+    	return this.tv;
     }
 
 }

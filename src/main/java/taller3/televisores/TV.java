@@ -48,7 +48,7 @@ public class TV {
 		this.control = control;
 	}
 	
-	public void setnumTV (int numTV) {
+	public static void setnumTV (int numTV) {
 		//Como es un atributo de clase, se accede de esta forma
 		TV.numTV = numTV;
 	}
@@ -73,9 +73,9 @@ public class TV {
 		return control;
 	}
 	
-	public int getnumTV () {
+	public static int getnumTV () {
 		//Como es un atributo de clase, se accede de esta forma
-		return numTV;
+		return TV.numTV;
 	}
 	
 	//No tengo parametros porque solo le estoy cambiando el valor al atributo
@@ -138,8 +138,4 @@ public class TV {
 		}
 	}
 	
-	public void enlazar (Control control) {
-    	this.control = control;
-    }
-
 }
