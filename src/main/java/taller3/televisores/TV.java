@@ -53,23 +53,23 @@ public class TV {
 		TV.numTV = numTV;
 	}
 	
-	public Marca getMarca (Marca marca) {
+	public Marca getMarca () {
 		return marca;
 	}
 	
-	public int getCanal (int canal) {
+	public int getCanal () {
 		return canal;
 	}
 	
-	public int getPrecio (int precio) {
+	public int getPrecio () {
 		return precio;
 	}
 	
-	public int getVolumen (int volumen) {
+	public int getVolumen () {
 		return volumen;
 	}
 	
-	public Control getControl (Control control) {
+	public Control getControl () {
 		return control;
 	}
 	
@@ -89,31 +89,32 @@ public class TV {
 		this.estado = false;
 	}
 	
-	public void canalUp (int canal) {
+	//Como no estoy utilizando 
+	public void canalUp () {
 		while (this.estado){
-			if (this.canal >= 1 && this.canal <= 119){
+			if (this.canal >= 1 && this.canal <= 120){
 				this.canal ++;
 			}
 			
-			if (this.canal < 1 || this.canal > 119) {
+			if (this.canal < 1 || this.canal > 120) {
 	            break;
 	        }
 		}
 	}
 	
-	public void canalDown (int canal) {
+	public void canalDown () {
 		while (this.estado){
-			if (this.canal >= 1 && this.canal <= 119){
+			if (this.canal >= 1 && this.canal <= 120){
 				this.canal --;
 			}
 
-			if (this.canal < 1 || this.canal > 119) {
+			if (this.canal < 1 || this.canal > 120) {
 	            break;
 	        }
 		}
 	}
 	
-	public void volumenUp (int volumen) {
+	public void volumenUp () {
 		while (this.estado){
 			if (this.volumen >= 0 && this.volumen <= 7){
 				this.volumen ++;
@@ -125,7 +126,7 @@ public class TV {
 		}
 	}
 	
-	public void volumenDown (int volumen) {
+	public void volumenDown () {
 		while (this.estado){
 			if (this.volumen >= 0 && this.volumen <= 7){
 				this.volumen --;
