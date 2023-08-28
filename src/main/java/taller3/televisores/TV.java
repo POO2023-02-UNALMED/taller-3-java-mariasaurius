@@ -33,7 +33,9 @@ public class TV {
 	}
 	
 	public void setCanal (int canal) {
-		this.canal = canal;
+		if (this.estado && canal >=1 && canal <=120) {
+			this.canal = canal;
+		}
 	}
 	
 	public void setPrecio (int precio) {
@@ -41,7 +43,9 @@ public class TV {
 	}
 	
 	public void setVolumen (int volumen) {
-		this.volumen = volumen;
+		if(this.estado && volumen >=0 && volumen <=7) {
+			this.volumen = volumen;
+		}
 	}
 	
 	public void setControl (Control control) {
@@ -54,23 +58,23 @@ public class TV {
 	}
 	
 	public Marca getMarca () {
-		return marca;
+		return this.marca;
 	}
 	
 	public int getCanal () {
-		return canal;
+		return this.canal;
 	}
 	
 	public int getPrecio () {
-		return precio;
+		return this.precio;
 	}
 	
 	public int getVolumen () {
-		return volumen;
+		return this.volumen;
 	}
 	
 	public Control getControl () {
-		return control;
+		return this.control;
 	}
 	
 	public static int getnumTV () {
@@ -89,53 +93,21 @@ public class TV {
 		this.estado = false;
 	}
 	
-	//Como no estoy utilizando 
+	
 	public void canalUp () {
-		while (this.estado){
-			if (this.canal >= 1 && this.canal <= 120){
-				this.canal ++;
-			}
-			
-			if (this.canal < 1 || this.canal > 120) {
-	            break;
-	        }
-		}
+		this.setCanal(canal + 1);
 	}
 	
 	public void canalDown () {
-		while (this.estado){
-			if (this.canal >= 1 && this.canal <= 120){
-				this.canal --;
-			}
-
-			if (this.canal < 1 || this.canal > 120) {
-	            break;
-	        }
-		}
+		this.setCanal(canal - 1);
 	}
 	
 	public void volumenUp () {
-		while (this.estado){
-			if (this.volumen >= 0 && this.volumen <= 7){
-				this.volumen ++;
-			}
-			
-			if (this.volumen < 0 || this.volumen > 7) {
-	            break;
-	        }
-		}
+		this.setVolumen(volumen + 1);
 	}
 	
 	public void volumenDown () {
-		while (this.estado){
-			if (this.volumen >= 0 && this.volumen <= 7){
-				this.volumen --;
-			}
-			
-			if (this.volumen < 0 || this.volumen > 7) {
-	            break;
-	        }
-		}
+		this.setVolumen(volumen - 1);
 	}
 	
 }
