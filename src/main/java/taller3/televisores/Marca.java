@@ -12,7 +12,7 @@ public class Marca {
 	}
 	
 	public String getNombre() {
-		//¿Quién esta llamando al atributo de instancia? Yo, el objeto
+		//Quien esta llamando al atributo de instancia Yo, el objeto
 		return this.nombre;
 	}
 	
